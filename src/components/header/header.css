@@ -1,0 +1,30 @@
+header{
+    margin-top: 1rem;
+    background: inherit;
+    padding: 0.5rem;
+    color: rgb(9, 9, 9);
+    display: flex;
+    justify-content: center;
+    gap: 13rem;
+    border-radius: 3rem;
+    font-size: 22px;
+    backdrop-filter: blur(12px);
+    box-shadow: var(--box-shadow);
+    position: fixed;
+    width: inherit;
+    z-index: 99;
+    
+}
+header p{
+    cursor: pointer;
+    
+}
+header p:hover{
+    scale:1.1;
+    transition: 0.5s;
+}
+@media(max-width:750px){
+    header{
+        gap:10rem;
+    }
+}

@@ -1,0 +1,41 @@
+/* Card.css */
+.card {
+    padding: 16px;
+    border: 1px solid #ccc;
+    margin: 10px;
+  }
+  
+  .red {
+    background: linear-gradient(to bottom, #87CEEB, #0074E4);
+  }
+  
+  .blue {
+    background-color: blue;
+  }
+  
+  .green {
+    background-color: green;
+  }
+  .img{
+    border-top-left-radius: 2rem;
+    border-top-right-radius:2rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+  }
+  h2{
+padding-bottom: 0.4rem;
+    color: white;
+  }
+  p{
+    padding-bottom: 1rem;
+  }
+  .client__avatar{
+ 
+    width: 4rem;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+    
+    border:0.4rem solidvar(--color-primary-variant);
+}
