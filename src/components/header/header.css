@@ -1,17 +1,16 @@
 header{
-    margin-top: 1rem;
-    background: inherit;
-    padding: 0.5rem;
+    background: white;
+    padding: 0.4rem;
+    padding-top: 1rem;
     color: rgb(9, 9, 9);
     display: flex;
     justify-content: center;
     gap: 13rem;
-    border-radius: 3rem;
-    font-size: 22px;
-    backdrop-filter: blur(12px);
+    font-size: 20px;
+    /* backdrop-filter: blur(20px); */
     box-shadow: var(--box-shadow);
     position: fixed;
-    width: inherit;
+    width: 100%;
     z-index: 99;
     
 }

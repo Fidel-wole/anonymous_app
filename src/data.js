@@ -1,3 +1,4 @@
+
 const Plays = [
     {
         id:1,
@@ -22,14 +23,14 @@ const Plays = [
     {
         id:4,
         title:'Rizz Me',
-        description:'send me anonymous confession',
+        description:'send me your best rizz',
         themecolor: "linear-gradient(90deg, red, orange)",
     },
     {
         id:5,
         title:'TBH',
         avatar:'https://stock.adobe.com/479233319?as_channel=adobe_com&as_campclass=brand&as_campaign=srp-raill&as_source=behance_net&as_camptype=acquisition&as_audience=users&as_content=thumbnail-click&promoid=J7XBWPPS&mv=other',
-        description:'send me anonymous confession',
+        description:"tell me something you don't like about me",
         themecolor: "linear-gradient(to top, #87CEEB, #0074E4)",
     },
     {

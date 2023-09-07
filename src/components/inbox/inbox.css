@@ -52,5 +52,12 @@
   text-align: center;
   display: flex;
   align-items: center;
-  padding-left: 46%;
+  padding-left: 45%;
 }
+
+
+@media screen and (max-width:600px) {
+.play_link{
+  padding-left: 34%;
+}
+ }

@@ -5,7 +5,7 @@ import './inbox.css'
 import 'swiper/css';
 import 'swiper/css/pagination';
 import Card from '../UI/Card';
-
+import Button from '../UI/Button';
 // import required modules
 import { Pagination, A11y } from 'swiper/modules';
 const Inbox = () => {
@@ -71,11 +71,13 @@ const Inbox = () => {
       </div>
       <div className="container">
         <div className="play_link">
+          <div>
    <p>{slideData[currentSlide]?.title}</p>
+   <Button themecolor={slideData[currentSlide]?.themecolor}></Button>
         </div>
-   
+   </div>
       </div>
-    
+
     </div>
   </>
   )
