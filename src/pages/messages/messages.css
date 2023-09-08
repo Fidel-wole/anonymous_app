@@ -1,12 +1,17 @@
 .messages{
     padding-top: 5rem;
-
     
 }
 .message{
     font-size: 5rem;
     color: purple;
     position: relative;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius-2);
+    width: fit-content;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    height: 7rem;
 }
 .grid{
     display: grid;
@@ -15,12 +20,13 @@
 .check{
     position: absolute;
     font-size: 1rem;
+    font-weight: bold;
     top: 1.2rem;
-    left: 3.5rem;
+    left: 4.2rem;
     color: #fff;
     width: fit-content;
     text-align: center;
-    background-color: rgb(163, 254, 163);
+    background-color: rgb(109, 238, 109);
     border-radius: 90%;
     padding: 0.1rem;
     height: 1.5rem;
