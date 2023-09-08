@@ -4,7 +4,7 @@ import Inbox from '../../components/inbox/Inbox'
 const Home = () => {
   return (
     <>
-    <Header/>
+ 
     <Inbox/>
     </>
   )

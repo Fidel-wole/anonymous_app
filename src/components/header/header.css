@@ -2,7 +2,6 @@ header{
     background: white;
     padding: 0.4rem;
     padding-top: 1rem;
-    color: rgb(9, 9, 9);
     display: flex;
     justify-content: center;
     gap: 13rem;
@@ -11,14 +10,15 @@ header{
     box-shadow: var(--box-shadow);
     position: fixed;
     width: 100%;
-    z-index: 99;
+    text-decoration: none;
     
 }
-header p{
+header .p{
     cursor: pointer;
-    
+    text-decoration: none;
+    color: black;
 }
-header p:hover{
+header .p:hover{
     scale:1.1;
     transition: 0.5s;
 }
