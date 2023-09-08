@@ -6,7 +6,7 @@ function App() {
   return (
 <>
 
-<BrowserRouter>
+<BrowserRouter basename={proocess.env.PUBLIC_URL}>
 <Header/>
   <Routes>
     <Route path='/' exact Component={Home} />
