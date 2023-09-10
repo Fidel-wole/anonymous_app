@@ -1,0 +1,43 @@
+.mesage_container{
+    padding-top:7rem;
+}
+.mesage{
+    border-radius:2rem;
+    box-shadow: var(--box-shadow);
+    min-height: 12rem;
+    text-align: center;
+background-color: white;
+padding: 0;
+font-size:20px;
+color: rgb(6, 4, 4);
+
+}
+.mesage p{
+    margin-bottom: 1rem;
+    color: white;
+    padding: 1rem;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    background:linear-gradient(90deg, violet, #0074E4) ;
+}
+.mesage small{
+    padding-bottom: 1rem;
+}
+.button{
+    text-align: center;
+}
+ .button .butn{
+    color: white;
+    width: 10rem;
+    background: linear-gradient(90deg, violet, #0074E4);
+    margin-top: 6rem;
+    padding: 0.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 2rem;
+}
+@media (max-width:650px){
+    .mesage{
+        min-height: 17rem;
+    }
+}

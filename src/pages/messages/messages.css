@@ -13,6 +13,17 @@
     padding: 0.5rem;
     height: 7rem;
 }
+.message:hover{
+animation: scale linear 1.7s infinite;
+}
+@keyframes scale{
+    0%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
 .grid{
     display: grid;
     grid-template-columns: repeat(7, 1fr);
