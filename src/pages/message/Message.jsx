@@ -5,7 +5,6 @@ import { useParams } from 'react-router-dom';
 import { messages } from '../../message';
 import "./message.css"
 import { Circles } from 'react-loader-spinner';
-import { CircularProgress } from '@mui/material';
 
 const Message = () => {
   const [loading, setLoading] = useState(true);
