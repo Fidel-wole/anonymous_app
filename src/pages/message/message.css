@@ -41,3 +41,9 @@ color: rgb(6, 4, 4);
         min-height: 17rem;
     }
 }
+.audio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
