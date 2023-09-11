@@ -1,12 +1,11 @@
 header{
-    background: white;
     padding: 0.6rem;
     padding-top: 1rem;
     display: flex;
     justify-content: center;
     gap: 13rem;
     font-size: 20px;
-    /* backdrop-filter: blur(20px); */
+    backdrop-filter: blur(20px);
     box-shadow: var(--box-shadow);
     position: fixed;
     width: 100%;
