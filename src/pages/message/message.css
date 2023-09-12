@@ -46,4 +46,8 @@ color: rgb(6, 4, 4);
     justify-content: center;
     align-items: center;
     height: 100vh;
+    margin-bottom: 1rem;
+}
+.audio p{
+    margin-top: 1rem;
 }

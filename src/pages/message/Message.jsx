@@ -38,6 +38,7 @@ const Message = () => {
     <div className="container">
       {loading ? (
         <div className="audio">
+          <div>
  <Circles
         className ="audio"
        height="80"
@@ -49,7 +50,8 @@ const Message = () => {
        wrapperStyle
        wrapperClass
        
-       />
+       /><p>Fetching...</p>
+       </div>
         </div>
        
       ) : (

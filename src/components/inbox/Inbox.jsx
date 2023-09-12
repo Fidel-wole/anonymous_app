@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
-
 import {Swiper, SwiperSlide} from 'swiper/react'
 import './inbox.css'
 import 'swiper/css';
 import 'swiper/css/pagination';
 import Card from '../UI/Card';
 import Button from '../UI/Button';
+
 // import required modules
 import { Pagination, A11y } from 'swiper/modules';
 const Inbox = () => {
