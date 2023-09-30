@@ -4,49 +4,51 @@ import { useState } from 'react';
 import './login.css'
 
 export default function SignInPage() {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-  
-    const handleUsernameChange = (e) => {
-      setUsername(e.target.value);
-    };
-  
-    const handlePasswordChange = (e) => {
-      setPassword(e.target.value);
-    };
-  
-    const handleLogin = async (e) => {
-      e.preventDefault();
-  
-      const loginData = {
-        username: username,
-        password: password,
-      };
-  
-      try {
-        const response = await fetch('http://localhost:8000/login', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(loginData),
-        });
-  
-        if (response.ok) {
-          // Authentication successful
-          const data = await response.json();
-          window.location.href="/home";
-          // You can handle the successful login response here (e.g., set user session, redirect, etc.)
-        } else {
-          // Authentication failed
-          console.error('Login failed');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
-        }
-      } catch (error) {
-        console.error('Error occurred during login:', error);
-      }
+  const handleUsernameChange = (e) => {
+    setUsername(e.target.value);
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
+    const loginData = {
+      username: username,
+      password: password,
     };
-  
+
+    try {
+      const response = await fetch('http://localhost:8000/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(loginData),
+      });
+
+      if (response.ok) {
+        // Authentication successful
+        const data = await response.json();
+
+        // Store the token in local storage
+        localStorage.setItem('token', data.token);
+
+        // Redirect to the home page or another protected route
+        window.location.href = "/home";
+      } else {
+        // Authentication failed
+        console.error('Login failed');
+      }
+    } catch (error) {
+      console.error('Error occurred during login:', error);
+    }
+  };
     return (
         <div className="text-center m-5-auto">
             <div>
@@ -68,7 +70,7 @@ export default function SignInPage() {
                 </p>
             </form>
             <footer>
-                <p>First time? <Link to="/register">Create an account</Link>.</p>
+                <p>First time? <Link to="/signup">Create an account</Link>.</p>
                 <p><Link to="/">Back to Homepage</Link>.</p>
             </footer>
         </div>

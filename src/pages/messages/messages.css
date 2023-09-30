@@ -50,3 +50,13 @@ animation: scale linear 1.7s infinite;
         gap: 0;
     }
 }
+.audio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-bottom: 1rem;
+}
+.audio p{
+    margin-top: 1rem;
+}
