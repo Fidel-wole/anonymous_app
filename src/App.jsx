@@ -8,29 +8,36 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import ProtectedRoute from './protectedRouth';
 
 function App() {
-
-  const location = useLocation();
-     {!location.pathname.includes("/") && <Header />}
   return (
     <>
       <BrowserRouter basename={process.env.PUBLIC_URL}>
-     
-        <Routes>
-          <Route path="/" element={<SignInPage />} />
-          <Route
-            path="/home"
-            element={<ProtectedRoute element={<Home />} />}
-          />
-          <Route
-            path="/messages"
-            element={<ProtectedRoute element={<Messages />} />}
-          />
-          <Route
-            path="/message/:messageId"
-            element={<ProtectedRoute element={<Message />} />}
-          />
-        </Routes>
+        <AppContent />
       </BrowserRouter>
+    </>
+  );
+}
+
+function AppContent() {
+  const location = useLocation();
+
+  return (
+    <>
+      {location.pathname !== '/' && <Header />}
+      <Routes>
+        <Route path="/" element={<SignInPage />} />
+        <Route
+          path="/home"
+          element={<ProtectedRoute element={<Home />} />}
+        />
+        <Route
+          path="/messages"
+          element={<ProtectedRoute element={<Messages />} />}
+        />
+        <Route
+          path="/message/:messageId"
+          element={<ProtectedRoute element={<Message />} />}
+        />
+      </Routes>
     </>
   );
 }
