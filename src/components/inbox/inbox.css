@@ -49,5 +49,5 @@
   text-align: center;
   display: flex;
   align-items: center;
-  padding-left: 45%;
+  justify-content:center;
 }

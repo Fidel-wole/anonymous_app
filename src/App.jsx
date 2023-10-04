@@ -6,6 +6,8 @@ import Message from './pages/message/Message';
 import SignInPage from './pages/auth/login/Login';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import ProtectedRoute from './protectedRouth';
+import Signup from './pages/auth/signup/Signup';
+import PostMessage from './pages/postMessage/PostMessage';
 
 function App() {
   return (
@@ -22,8 +24,11 @@ function AppContent() {
 
   return (
     <>
-      {location.pathname !== '/' && <Header />}
+      {location.pathname !== '/'  && <Header />}
+      
+    
       <Routes>
+      <Route path="/signup" element={<Signup/>} />
         <Route path="/" element={<SignInPage />} />
         <Route
           path="/home"
@@ -37,6 +42,9 @@ function AppContent() {
           path="/message/:messageId"
           element={<ProtectedRoute element={<Message />} />}
         />
+         <Route
+          path="/message/:anonymousId/:userId"
+          element={<PostMessage/>} />
       </Routes>
     </>
   );

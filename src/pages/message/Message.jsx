@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Axios from "axios";
 import { useParams } from "react-router-dom";
-
+import html2canvas from 'html2canvas';
 import "./message.css";
 import { Circles } from "react-loader-spinner";
 
 const Message = () => {
   const [loading, setLoading] = useState(true);
-  const [userInfo, setUserInfo] = useState([]);
+  const [ userInfo, setUserInfo] = useState([]);
   const [cardContent, setCardContent] = useState([]);
 
   const { messageId } = useParams();
@@ -30,7 +30,7 @@ const Message = () => {
       });
 
     // Fetch data from the server when the component mounts
-    Axios.get("http://localhost:8000/message/" + encodedMessageId, { headers })
+    Axios.get(`http://localhost:8000/message/${encodedMessageId}`, { headers })
       .then((response) => {
         console.log(response.data.message);
         setCardContent(response.data.message);
@@ -41,6 +41,30 @@ const Message = () => {
         setLoading(false);
       });
   }, [messageId]);
+
+      const divToCaptureRef = useRef(null);
+      const handleShareClick = async () => {
+        if (navigator.share) {
+          try {
+            const canvas = await html2canvas(divToCaptureRef.current);
+            const dataUrl = canvas.toDataURL('image/png');
+            const blob = await fetch(dataUrl).then((res) => res.blob());
+    
+            const shareData = {
+              title: "Message Screenshot",
+              text: "Check out this message!",
+              files: [new File([blob], 'screenshot.png', { type: 'image/png' })],
+            };
+    
+            await navigator.share(shareData);
+          } catch (error) {
+            console.error('Error sharing:', error);
+          }
+        } else {
+          console.log('Web Share API not supported');
+          // You can provide a fallback sharing mechanism here for unsupported browsers
+        }
+      };
 
   return (
     <div className="container">
@@ -61,15 +85,15 @@ const Message = () => {
           </div>
         </div>
       ) : (
-        <div>
-          <div className="mesage_container">
+        <div ref={divToCaptureRef}>
+          <div className="mesage_container" >
             <div className="mesage">
               <p>{cardContent.anonymousId.description}</p>
               <small>{cardContent.message}</small>
             </div>
           </div>
           <div className="button">
-            <button className="butn">Share</button>
+            <button className="butn" onClick={handleShareClick}>Share</button>
           </div>
         </div>
       )}

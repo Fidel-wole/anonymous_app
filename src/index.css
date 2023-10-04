@@ -61,6 +61,7 @@ h3,
 h4,
 h5{
     font-size: 500;
+    color:white;
 }
 h1{
     font-size: 2.5rem;
@@ -107,3 +108,20 @@ img{
     }
 }
 
+
+.login-page-1 header{
+    
+text-align: center !important;
+    padding: 0.4rem !important;
+    position: relative !important;
+
+}
+
+.login-page-1 label input[type="password"]:first-child{
+    display: none;
+}
+form{
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex !important;
+}

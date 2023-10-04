@@ -6,6 +6,7 @@ import "swiper/css/pagination";
 import Card from "../UI/Card";
 import Button from "../UI/Button";
 import Axios from "axios";
+import { Circles } from "react-loader-spinner";
 // import required modules
 import { Pagination, A11y } from "swiper/modules";
 
@@ -14,6 +15,31 @@ const Inbox = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [slideData, setSlidesData] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+
+
+  const copyLinkToClipboard = () => {
+    const linkToCopy = `http://localhost:3000/message/${slideData[currentSlide]?._id}/${userInfo.userId}`; 
+  
+    // Check if the link exists before copying
+    if (linkToCopy) {
+      navigator.clipboard.writeText(linkToCopy).then(() => {
+        // Link copied successfully, show the success message
+        console.log("Link copied to clipboard: " + linkToCopy);
+        setShowSuccessMessage(true);
+  
+        // Hide the success message after a few seconds 
+        setTimeout(() => {
+          setShowSuccessMessage(false);
+        }, 3000); // Hide after 3 seconds (adjust the time as needed)
+      }).catch((error) => {
+        // Handle any errors that may occur during copying
+        console.error("Error copying link: " + error);
+      });
+    }
+  };
+  
+  
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -74,7 +100,21 @@ const Inbox = () => {
       <div className="container">
         <div className="swipers">
           {loading ? (
-            <p>Loading...</p>
+                   <div className="audio">
+                   <div>
+                     <Circles
+                       className="audio"
+                       height={80}
+                       width={80}
+                       radius={9}
+                       color="rgb(167, 70, 199)"
+                       ariaLabel="loading"
+                       wrapperStyle
+                       wrapperClass
+                     />
+                     <p>Loading...</p>
+                   </div>
+                 </div>
           ) : Array.isArray(slideData) && slideData.length > 0 ? (
             <Swiper
               className="container testimonials__container"
@@ -108,7 +148,12 @@ const Inbox = () => {
           <div className="play_link">
             <div>
               <p>{slideData[currentSlide]?.title}</p>
-              <Button themecolor={slideData[currentSlide]?.themecolor}></Button>
+              <button onClick={copyLinkToClipboard}> 
+              <Button   onClick={copyLinkToClipboard} themecolor={slideData[currentSlide]?.themecolor}></Button>
+           </button>
+           {showSuccessMessage && (
+        <p className="success-message">Link copied successfully!</p>
+      )}
             </div>
           </div>
         </div>

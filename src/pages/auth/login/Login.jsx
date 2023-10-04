@@ -1,9 +1,16 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { useState } from 'react';
-import './login.css'
+// import React from 'react'
+// import { Link } from 'react-router-dom'
+ import { useState } from 'react';
 
-export default function SignInPage() {
+import React from 'react'
+import './login.css'
+import LoginPage from '@react-login-page/page1';
+import {Logo} from '@react-login-page/page1';
+import LoginLogo from 'react-login-page/logo-rect'
+import {Input} from '@react-login-page/page1';
+
+const Login = () => {
+  
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -49,31 +56,22 @@ export default function SignInPage() {
       console.error('Error occurred during login:', error);
     }
   };
-    return (
-        <div className="text-center m-5-auto">
-            <div>
-           
-            <h2>Sign in to us</h2>
-            <form onSubmit={handleLogin}>
-                <p>
-                    <label>Username or email address</label><br/>
-                    <input type="text" value={username} onChange={handleUsernameChange} required />
-                </p>
-                <p>
-                    <label>Password</label>
-                    <Link to="/forget-password"><label className="right-label">Forget password?</label></Link>
-                    <br/>
-                    <input type="password" value={password} onChange={handlePasswordChange} required />
-                </p>
-                <p>
-                    <button id="sub_btn" type="submit">Login</button>
-                </p>
-            </form>
-            <footer>
-                <p>First time? <Link to="/signup">Create an account</Link>.</p>
-                <p><Link to="/">Back to Homepage</Link>.</p>
-            </footer>
-        </div>
-        </div>
-    )
+  return (
+    
+
+    <form onSubmit={handleLogin}>
+
+    <LoginPage style={{height: 650}}>
+
+      <Logo>
+        <LoginLogo />
+      </Logo>
+    <Input name='username' type='text' placeholder='username' value={username}  onChange={handleUsernameChange}/>
+    <Input name='password' type='text' placeholder='password' value={password} visibility ={false} onChange={handlePasswordChange}/>
+    </LoginPage>
+    </form>
+
+  )
 }
+
+export default Login
