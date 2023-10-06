@@ -41,6 +41,7 @@ const PostMessage = () => {
       
         setNotification("Message sent sucessfully, it's time for you to create yours")
         console.log("Message sent successfully");
+window.location.href='/signup';
       } else {
         // Handle the case where the request was not successful
         console.error("Failed to send message");
