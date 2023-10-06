@@ -16,7 +16,7 @@ const PostMessage = () => {
 
   const handleMessage = (e) => {
     e.preventDefault();
-
+setLoading(true);
     // Check if the message is not empty before making the request
     if (message.trim() === '') {
       // Handle the case where the message is empty, show an error message, or prevent the request
@@ -38,17 +38,20 @@ const PostMessage = () => {
     })
     .then((response) => {
       if (response.ok) {
-      
         setNotification("Message sent sucessfully, it's time for you to create yours")
         console.log("Message sent successfully");
+        setTimeout(() => {
+          window.location.href = '/signup';
+        }, 2000);
       } else {
         // Handle the case where the request was not successful
         console.error("Failed to send message");
       }
     })
     .catch((error) => {
-      console.error(error);
-      setLoading(false); // You might want to handle errors gracefully
+      console.error("Error during fetch:", error);
+  setNotification("Error sending the message. Please try again.");
+  setLoading(false);
     });
   };
 
@@ -94,8 +97,9 @@ const PostMessage = () => {
         </div>
       ) : (
         <div>
-          {notification}
+       
           <div className="mesage_container">
+          {notification}
             <div className="mesage">
               <p>{anonymousData.description}</p>
               <form onSubmit={handleMessage}>
