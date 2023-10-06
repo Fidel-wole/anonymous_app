@@ -1,10 +1,10 @@
 import React from 'react';
-import Header from './components/header/Header';
+
 import Home from './pages/home/Home';
 import Messages from './pages/messages/Messages';
 import Message from './pages/message/Message';
 import SignInPage from './pages/auth/login/Login';
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ProtectedRoute from './protectedRouth';
 import Signup from './pages/auth/signup/Signup';
 import PostMessage from './pages/postMessage/PostMessage';
@@ -20,11 +20,11 @@ function App() {
 }
 
 function AppContent() {
-  const location = useLocation();
+  // const location = useLocation();
 
   return (
     <>
-      {location.pathname !== '/'  && <Header />}
+      {/* {location.pathname !== '/'  && <Header />} */}
       
     
       <Routes>

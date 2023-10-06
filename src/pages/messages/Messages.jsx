@@ -4,9 +4,10 @@ import "./messages.css";
 import { CiMail } from "react-icons/ci";
 import { AiOutlineCheck } from "react-icons/ai";
 import { Circles } from "react-loader-spinner";
+import Header from '../../components/header/Header'
 
 const Messages = () => {
-  const [userInfo, setUserInfo] = useState(null);
+  // const [userInfo, setUserInfo] = useState(null);
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -16,14 +17,14 @@ const Messages = () => {
       Authorization: "Bearer " + token, 
     };
 
-    Axios.get("http://localhost:8000/authUser", { headers })
-      .then((response) => {
-        console.log(response.data);
-        setUserInfo(response.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    // Axios.get("http://localhost:8000/authUser", { headers })
+    //   .then((response) => {
+    //     console.log(response.data);
+    //     setUserInfo(response.data);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
 
     // Fetch data from the server when the component mounts
     Axios.get("http://localhost:8000/messages", { headers })
@@ -39,7 +40,9 @@ const Messages = () => {
   }, []);
 
   return (
+
     <>
+    <Header />
       <div className="container">
         <div className="messages">
           <div className="grid">

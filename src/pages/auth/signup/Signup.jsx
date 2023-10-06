@@ -9,6 +9,7 @@ const Signup = () => {
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    // const [avatar, setAvatar] = useState('');
   
     const handleUsernameChange = (e) => {
       setUsername(e.target.value);
@@ -18,12 +19,16 @@ const Signup = () => {
       setPassword(e.target.value);
     };
   
+    // const handleAvatarChange = (e)=>{
+    //   setAvatar(e.target.value);
+    // }
     const handleSignup = async (e) => {
       e.preventDefault();
   
       const signupData = {
         username: username,
         password: password,
+
       };
   
       try {
@@ -54,7 +59,7 @@ const Signup = () => {
       }
     };
   return (
-    <form onSubmit={handleSignup}>
+    <form onSubmit={handleSignup} encyType = "multipart/form">
 
     <LoginPage style={{height: 680}}>
 
@@ -63,6 +68,7 @@ const Signup = () => {
       </Logo>
     <Input name='username' type='text' placeholder='username' value={username}  onChange={handleUsernameChange}/>
     <Input name='password' type='text' placeholder='password' value={password} visibility ={false} onChange={handlePasswordChange}/>
+    {/* <Input name='avatar'  type='file' placeholder='Upload an image' value={avatar} onChange ={handleAvatarChange} /> */}
     </LoginPage>
     </form>
   )

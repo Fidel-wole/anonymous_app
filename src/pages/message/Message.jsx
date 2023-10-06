@@ -4,10 +4,11 @@ import { useParams } from "react-router-dom";
 import html2canvas from 'html2canvas';
 import "./message.css";
 import { Circles } from "react-loader-spinner";
+import Header from '../../components/header/Header'
 
 const Message = () => {
   const [loading, setLoading] = useState(true);
-  const [ userInfo, setUserInfo] = useState([]);
+  // const [ userInfo, setUserInfo] = useState([]);
   const [cardContent, setCardContent] = useState([]);
 
   const { messageId } = useParams();
@@ -20,14 +21,14 @@ const Message = () => {
       Authorization: "Bearer " + token,
     };
 
-    Axios.get("http://localhost:8000/authUser", { headers })
-      .then((response) => {
-        console.log(response.data);
-        setUserInfo(response.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    // Axios.get("http://localhost:8000/authUser", { headers })
+    //   .then((response) => {
+    //     console.log(response.data);
+    //     setUserInfo(response.data);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
 
     // Fetch data from the server when the component mounts
     Axios.get(`http://localhost:8000/message/${encodedMessageId}`, { headers })
@@ -67,6 +68,8 @@ const Message = () => {
       };
 
   return (
+    <>
+    <Header/>
     <div className="container">
       {loading ? (
         <div className="audio">
@@ -90,6 +93,7 @@ const Message = () => {
             <div className="mesage">
               <p>{cardContent.anonymousId.description}</p>
               <small>{cardContent.message}</small>
+
             </div>
           </div>
           <div className="button">
@@ -98,6 +102,7 @@ const Message = () => {
         </div>
       )}
     </div>
+    </>
   );
 };
 
