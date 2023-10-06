@@ -19,7 +19,7 @@ const Inbox = () => {
 
 
   const copyLinkToClipboard = () => {
-    const linkToCopy = `https://anon-backend-qse7.onrender.com/message/${slideData[currentSlide]?._id}/${userInfo.userId}`; 
+    const linkToCopy = `https://anon-5lxm.onrender.com/message/${slideData[currentSlide]?._id}/${userInfo.userId}`; 
   
     // Check if the link exists before copying
     if (linkToCopy) {
