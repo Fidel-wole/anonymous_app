@@ -31,7 +31,7 @@ const Message = () => {
     //   });
 
     // Fetch data from the server when the component mounts
-    Axios.get(`http://localhost:8000/message/${encodedMessageId}`, { headers })
+    Axios.get(`https://anon-backend-qse7.onrender.com/message/${encodedMessageId}`, { headers })
       .then((response) => {
         console.log(response.data.message);
         setCardContent(response.data.message);

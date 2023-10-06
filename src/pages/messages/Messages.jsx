@@ -27,7 +27,7 @@ const Messages = () => {
     //   });
 
     // Fetch data from the server when the component mounts
-    Axios.get("http://localhost:8000/messages", { headers })
+    Axios.get("https://anon-backend-qse7.onrender.com/messages", { headers })
       .then((response) => {
         console.log(response.data.messages);
         setMessages(response.data.messages); // Set the messages in state

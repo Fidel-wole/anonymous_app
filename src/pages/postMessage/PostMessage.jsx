@@ -29,7 +29,7 @@ const PostMessage = () => {
     };
 
     // Send the message to the server using fetch
-    fetch(`http://localhost:8000/message/${encodeURIComponent(anonymousId)}/${encodeURIComponent(userId)}`, {
+    fetch(`https://anon-backend-qse7.onrender.com/message/${encodeURIComponent(anonymousId)}/${encodeURIComponent(userId)}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -54,7 +54,7 @@ const PostMessage = () => {
 
   useEffect(() => {
     // Fetch data from the server when the component mounts using fetch
-    fetch(`http://localhost:8000/message/${encodeURIComponent(anonymousId)}/${encodeURIComponent(userId)}`)
+    fetch(`https://anon-backend-qse7.onrender.com/message/${encodeURIComponent(anonymousId)}/${encodeURIComponent(userId)}`)
       .then((response) => {
         if (response.ok) {
           return response.json();

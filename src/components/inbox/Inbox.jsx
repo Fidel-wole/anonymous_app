@@ -19,7 +19,7 @@ const Inbox = () => {
 
 
   const copyLinkToClipboard = () => {
-    const linkToCopy = `http://localhost:3000/message/${slideData[currentSlide]?._id}/${userInfo.userId}`; 
+    const linkToCopy = `https://anon-backend-qse7.onrender.com/message/${slideData[currentSlide]?._id}/${userInfo.userId}`; 
   
     // Check if the link exists before copying
     if (linkToCopy) {
@@ -47,7 +47,7 @@ const Inbox = () => {
       Authorization: "Bearer " + token,
     };
 
-    Axios.get("http://localhost:8000/authUser", { headers })
+    Axios.get("https://anon-backend-qse7.onrender.com/authUser", { headers })
       .then((response) => {
         console.log(response.data);
         setUserInfo(response.data);
@@ -57,7 +57,7 @@ const Inbox = () => {
       });
 
     // Fetch data from the server when the component mounts
-    Axios.get("http://localhost:8000/anonymous", { headers })
+    Axios.get("https://anon-backend-qse7.onrender.com/anonymous", { headers })
       .then((response) => {
         console.log(response.data.anonymous);
         setSlidesData(response.data.anonymous);
