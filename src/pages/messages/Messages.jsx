@@ -94,11 +94,7 @@ const Messages = () => {
                   <button className="butn" onClick={handleDeleteClick}>
                     Delete All
                   </button>
-<<<<<<< HEAD
                 </div>
-=======
-                </div> 
->>>>>>> dbbdbfb2db0d25a0cfa9589be980d57f41e88ad4
               </>
             )}
           </div>
