@@ -102,7 +102,7 @@ setLoading(false);
           <div className="mesage_container">
     
             <div className="mesage">
-             <p>{notification}</p> <p>{anonymousData.description}</p>
+          <p>{anonymousData.description}</p>
               <form onSubmit={handleMessage}>
                 {/* <input type='text' placeholder="Type in your message" value={message}  /> */}
                 <textarea value={message} rows={11} name="message" onChange={handleMessageInput}>Type in your message</textarea>
