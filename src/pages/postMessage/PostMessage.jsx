@@ -38,6 +38,7 @@ setLoading(true);
     })
     .then((response) => {
       if (response.ok) {
+setLoading(false);
         setNotification("Message sent sucessfully, it's time for you to create yours")
         console.log("Message sent successfully");
         setTimeout(() => {
