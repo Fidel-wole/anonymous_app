@@ -43,7 +43,6 @@ setLoading(true);
         setTimeout(() => {
           window.location.href = '/signup';
         }, 2000);
-window.location.href='/signup';
       } else {
         // Handle the case where the request was not successful
         console.error("Failed to send message");
@@ -93,7 +92,7 @@ window.location.href='/signup';
               wrapperStyle
               wrapperClass
             />
-            <p>Fetching...</p>
+            <p>Loading...</p>
           </div>
         </div>
       ) : (
