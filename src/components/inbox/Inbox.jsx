@@ -131,7 +131,7 @@ const Inbox = () => {
                   <SwiperSlide key={index} className="testimonial">
                     <Card
                       themecolor={data.themecolor}
-                      img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTczfz9b-331zxq2KwpI8T1jynnOu0QgRJHNQ&usqp=CAU"
+                      img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUsYvKgXGTrUNed6sIR60Gtxkvrp6H5wBr8Q&usqp=CAU"
                       title={data.title}
                       content={data.description}
                     />
