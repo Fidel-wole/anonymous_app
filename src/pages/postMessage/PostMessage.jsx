@@ -43,7 +43,7 @@ setLoading(true);
         setTimeout(() => {
           window.location.href = '/signup';
         }, 2000);
-window.location.href='/signup'; 6e3c98b99499d6a533bdc31b146c909fed5d74f7
+window.location.href='/signup';
       } else {
         // Handle the case where the request was not successful
         console.error("Failed to send message");
