@@ -41,6 +41,7 @@ setLoading(true);
 setLoading(false);
         setNotification("Message sent sucessfully, it's time for you to create yours")
         console.log("Message sent successfully");
+set message('');
         setTimeout(() => {
           window.location.href = '/signup';
         }, 2000);
