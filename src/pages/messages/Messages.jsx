@@ -61,7 +61,7 @@ const Messages = () => {
         <div className="messages">
           <div className="grid">
             {loading ? (
-              <div className="audio">
+              <div className="audio circle">
                 <div>
                   <Circles
                     className="audio"
