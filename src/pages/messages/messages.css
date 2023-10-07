@@ -1,4 +1,4 @@
-.messages{
+no.messages{
     padding-top: 5rem;
     
 }
@@ -64,19 +64,19 @@ animation: scale linear 1.7s infinite;
     bottom: 8rem;
 }
 
-.button{
+.botn{
     position:fixed;
     bottom:10rem;
     left:39.5rem;
     font-size: larger;
 }
-.button:hover{
+.botn:hover{
     scale: 1.1;
     transition: .8s;
 }
 
 @media screen and (max-width:750px){
-    .button{
+    .botn{
         bottom:2rem;
         backdrop-filter: blur(5px);
         left:8rem;
