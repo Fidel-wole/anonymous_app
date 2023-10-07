@@ -10,8 +10,8 @@ const Message = () => {
   const [loading, setLoading] = useState(true);
   // const [ userInfo, setUserInfo] = useState([]);
   const [cardContent, setCardContent] = useState([]);
-
   const { messageId } = useParams();
+
   useEffect(() => {
     const trimmedMessageId = messageId.trim();
     const encodedMessageId = encodeURIComponent(trimmedMessageId);
@@ -67,6 +67,24 @@ const Message = () => {
         }
       };
 
+      const handleDeleteClick = (e)=>{
+        e.preventDefault();
+        const trimmedMessageId = messageId.trim();
+        const encodedMessageId = encodeURIComponent(trimmedMessageId);
+
+        const token = localStorage.getItem("token");
+        fetch(`https://anon-backend-qse7.onrender.com/deletemessage/${encodedMessageId}`, {
+          method: "POST",
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + token
+          },
+        } ).then(()=>{
+          console.log('deleted')
+          window.location.href = '/messages'
+        })
+      }
+
   return (
     <>
     <Header/>
@@ -98,6 +116,9 @@ const Message = () => {
           </div>
           <div className="button">
             <button className="butn" onClick={handleShareClick}>Share</button>
+          </div>
+          <div className="button">
+            <button className="butn" onClick={handleDeleteClick}>Delete</button>
           </div>
         </div>
       )}

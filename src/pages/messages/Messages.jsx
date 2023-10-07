@@ -39,10 +39,24 @@ const Messages = () => {
       });
   }, []);
 
-  return (
+  const handleDeleteClick = (e)=>{
+    e.preventDefault();
 
+    const token = localStorage.getItem("token");
+    fetch(`https://anon-backend-qse7.onrender.com/deletemessages`, {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + token
+      },
+    } ).then(()=>{
+      console.log('deleted')
+      window.location.href = '/messages'
+    })
+  }
+  return (
     <>
-    <Header />
+      <Header />
       <div className="container">
         <div className="messages">
           <div className="grid">
@@ -65,26 +79,29 @@ const Messages = () => {
             ) : messages.length === 0 ? (
               <p>No messages found.</p>
             ) : (
-              messages.map((data) => (
-                <a
-                  href={`/message/${data._id}`}
-                  className="message"
-                  key={data._id}
-                >
-                  <div className="icon">
-                    <CiMail />
-                  </div>
-                  <div className="check">
-                    <AiOutlineCheck />
-                  </div>
-                </a>
-              ))
+              <>
+                {messages.map((data) => (
+                  <a href={`/message/${data._id}`} className="message" key={data._id}>
+                    <div className="icon">
+                      <CiMail />
+                    </div>
+                    <div className="check">
+                      <AiOutlineCheck />
+                    </div>
+                  </a>
+                ))}
+                <div className="button">
+                  <button className="butn" onClick={handleDeleteClick}>
+                    Delete
+                  </button>
+                </div>
+              </>
             )}
           </div>
         </div>
       </div>
     </>
   );
-};
+  };
 
 export default Messages;

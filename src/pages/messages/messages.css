@@ -1,34 +1,41 @@
-.messages{
+.messages {
     padding-top: 5rem;
-    
-}
-.message{
+  }
+  
+  .message {
     font-size: 5rem;
     color: purple;
     position: relative;
     box-shadow: var(--box-shadow);
     border-radius: var(--border-radius-2);
     width: fit-content;
-    margin-bottom: 1rem;
+    margin: 0.5rem; /* Reduce margin */
     padding: 0.5rem;
     height: 7rem;
-}
-.message:hover{
-animation: scale linear 1.7s infinite;
-}
-@keyframes scale{
-    0%{
-        transform: scale(1.1);
+    display: flex; /* Add flex display to center content */
+    align-items: center; /* Vertically center content */
+  }
+  
+  .message:hover {
+    animation: scale linear 1.7s infinite;
+  }
+  
+  @keyframes scale {
+    0% {
+      transform: scale(1.1);
     }
-    100%{
-        transform: scale(1);
+    100% {
+      transform: scale(1);
     }
-}
-.grid{
+  }
+  
+  .grid {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
-}
-.check{
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); /* Adjust columns */
+    gap: 1rem; /* Add gap between items */
+  }
+  
+  .check {
     position: absolute;
     font-size: 1rem;
     font-weight: bold;
@@ -41,22 +48,24 @@ animation: scale linear 1.7s infinite;
     border-radius: 90%;
     padding: 0.1rem;
     height: 1.5rem;
-
-}
-
-@media (max-width:650px){
-    .grid{
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0;
+  }
+  
+  @media (max-width: 650px) {
+    .grid {
+      grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr)); /* Adjust columns for smaller screens */
+      gap: 0.5rem; /* Adjust gap for smaller screens */
     }
-}
-.audio{
+  }
+  
+  .audio {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin-bottom: 1rem;
-}
-.audio p{
+  }
+  
+  .audio p {
     margin-top: 1rem;
-}
+  }
+  
