@@ -77,12 +77,12 @@ animation: scale linear 1.7s infinite;
 
 @media screen and (max-width:750px){
     .button{
-        bottom:1rem;
+        bottom:2rem;
         backdrop-filter: blur(5px);
-        left:7rem;
+        left:8rem;
         font-size: 19px;
     }
     .audio{
-        left: 10rem;
+        left: 7rem;
     }
 }
