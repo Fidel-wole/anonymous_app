@@ -118,7 +118,7 @@ const Message = () => {
             <button className="butn" onClick={handleShareClick}>Share</button>
           </div>
           <div className="button">
-            <button className="butn" onClick={handleDeleteClick}>Delete</button>
+            <button className="butn del" onClick={handleDeleteClick}>Delete</button>
           </div>
         </div>
       )}

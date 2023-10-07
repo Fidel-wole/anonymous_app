@@ -38,6 +38,7 @@ setLoading(true);
     })
     .then((response) => {
       if (response.ok) {
+
         setLoading(false);
         setNotification("Message sent sucessfully, it's time for you to create yours")
         console.log("Message sent successfully");
@@ -46,6 +47,14 @@ setLoading(true);
         }, 2000);
 
 window.location.href='/signup';
+
+setLoading(false);
+        setNotification("Message sent sucessfully, it's time for you to create yours")
+        console.log("Message sent successfully");
+setMessage('');
+        setTimeout(() => {
+          window.location.href = '/signup';
+        }, 2000);
       } else {
         // Handle the case where the request was not successful
         console.error("Failed to send message");
@@ -95,16 +104,16 @@ window.location.href='/signup';
               wrapperStyle
               wrapperClass
             />
-            <p>Fetching...</p>
+            <p>Loading...</p>
           </div>
         </div>
       ) : (
         <div>
        
           <div className="mesage_container">
-          {notification}
+    {notification}
             <div className="mesage">
-              <p>{anonymousData.description}</p>
+          <p>{anonymousData.description}</p>
               <form onSubmit={handleMessage}>
                 {/* <input type='text' placeholder="Type in your message" value={message}  /> */}
                 <textarea value={message} rows={11} name="message" onChange={handleMessageInput}>Type in your message</textarea>
