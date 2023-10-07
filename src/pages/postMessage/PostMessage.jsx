@@ -100,7 +100,7 @@ setLoading(false);
         <div>
        
           <div className="mesage_container">
-    
+    {notification}
             <div className="mesage">
           <p>{anonymousData.description}</p>
               <form onSubmit={handleMessage}>
