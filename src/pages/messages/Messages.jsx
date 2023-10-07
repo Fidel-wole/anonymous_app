@@ -91,7 +91,7 @@ const Messages = () => {
                   </a>
                 ))}
                 <div className="button">
-                  <button className="butn" onClick={handleDeleteClick}>
+                  <button className="butn botn" onClick={handleDeleteClick}>
                     Delete All
                   </button>
                 </div>
