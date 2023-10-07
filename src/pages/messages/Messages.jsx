@@ -49,9 +49,9 @@ const Messages = () => {
         'Content-Type': 'application/json',
         'Authorization': 'Bearer ' + token
       },
-    } ).then(()=>{
+    } ).then((good)=>{
       console.log('deleted')
-      window.location.href = '/messages'
+      
     })
   }
   return (
@@ -90,11 +90,11 @@ const Messages = () => {
                     </div>
                   </a>
                 ))}
-                {/* <div className="button">
+                <div className="button">
                   <button className="butn" onClick={handleDeleteClick}>
-                    Delete
+                    Delete All
                   </button>
-                </div> */}
+                </div>
               </>
             )}
           </div>
