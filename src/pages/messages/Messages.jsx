@@ -90,11 +90,11 @@ const Messages = () => {
                     </div>
                   </a>
                 ))}
-                {/* <div className="button">
+                <div className="button">
                   <button className="butn" onClick={handleDeleteClick}>
                     Delete
                   </button>
-                </div> */}
+                </div> 
               </>
             )}
           </div>
