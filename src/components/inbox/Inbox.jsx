@@ -36,13 +36,7 @@ const Inbox = () => {
         // Handle any errors that may occur during copying
         console.error("Error copying link: " + error);
       });
-    }
-  };
 
-<<<<<<< HEAD
- 
-=======
->>>>>>> 6f8e03996fced0239b082a62c472003ba6ff1d94
   
   
 
@@ -102,12 +96,10 @@ const Inbox = () => {
 
   return (
     <>
-<<<<<<< HEAD
+
      <Helmet>
         <meta name="description" content={`Send ${userInfo.username} a ${slideData[currentSlide]?.title} he/she won't know who sent it`} />
       </Helmet>
-=======
->>>>>>> 6f8e03996fced0239b082a62c472003ba6ff1d94
       <div className="container">
         <div className="swipers">
           {loading ? (
