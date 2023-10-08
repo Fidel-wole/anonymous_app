@@ -56,33 +56,35 @@ animation: scale linear 1.7s infinite;
     align-items: center;
     height: 100vh;
     margin-bottom: 1rem;
-    position: absolute;
-    left: 39.5rem;
+    
 }
 .audio p{
     margin-top: 1rem;
     bottom: 8rem;
 }
-
-.button{
+.circle {
+position: absolute;
+    left: 39.5rem;
+}
+.botn{
     position:fixed;
     bottom:10rem;
     left:39.5rem;
     font-size: larger;
 }
-.button:hover{
+.botn:hover{
     scale: 1.1;
     transition: .8s;
 }
 
 @media screen and (max-width:750px){
-    .button{
-        bottom:1rem;
+    .botn{
+        bottom:2rem;
         backdrop-filter: blur(5px);
-        left:7rem;
+        left:6rem;
         font-size: 19px;
     }
-    .audio{
-        left: 10rem;
+    .circle {
+        left: 7rem;
     }
 }

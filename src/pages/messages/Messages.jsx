@@ -62,7 +62,7 @@ const Messages = () => {
         <div className="messages">
           <div className="grid">
             {loading ? (
-              <div className="audio">
+              <div className="audio circle">
                 <div>
                   <Circles
                     className="audio"
@@ -92,7 +92,7 @@ const Messages = () => {
                   </a>
                 ))}
                 <div className="button">
-                  <button className="butn" onClick={handleDeleteClick}>
+                  <button className="butn botn" onClick={handleDeleteClick}>
                     Delete All
                   </button>
                 </div>
