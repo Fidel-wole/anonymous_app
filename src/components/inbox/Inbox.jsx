@@ -39,7 +39,6 @@ const Inbox = () => {
     }
   };
 
-  const metaDescription = `Send ${userInfo.username} a ${slideData[currentSlide]?.title} he/she won't know who sent it`
   
   
 
