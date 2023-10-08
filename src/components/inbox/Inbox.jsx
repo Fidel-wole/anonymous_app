@@ -36,6 +36,8 @@ const Inbox = () => {
         // Handle any errors that may occur during copying
         console.error("Error copying link: " + error);
       });
+    }
+  };
 
   
   
