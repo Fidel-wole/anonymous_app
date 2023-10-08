@@ -9,7 +9,6 @@ import Axios from "axios";
 import { Circles } from "react-loader-spinner";
 // import required modules
 import { Pagination, A11y } from "swiper/modules";
-import { Helmet } from "react-helmet";
 
 const Inbox = () => {
   const [userInfo, setUserInfo] = useState(null);
@@ -40,7 +39,10 @@ const Inbox = () => {
     }
   };
 
+<<<<<<< HEAD
  
+=======
+>>>>>>> 6f8e03996fced0239b082a62c472003ba6ff1d94
   
   
 
@@ -100,9 +102,12 @@ const Inbox = () => {
 
   return (
     <>
+<<<<<<< HEAD
      <Helmet>
         <meta name="description" content={`Send ${userInfo.username} a ${slideData[currentSlide]?.title} he/she won't know who sent it`} />
       </Helmet>
+=======
+>>>>>>> 6f8e03996fced0239b082a62c472003ba6ff1d94
       <div className="container">
         <div className="swipers">
           {loading ? (
