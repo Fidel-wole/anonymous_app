@@ -9,7 +9,7 @@ import Axios from "axios";
 import { Circles } from "react-loader-spinner";
 // import required modules
 import { Pagination, A11y } from "swiper/modules";
-
+import {Helmet} from 'react-helmet':
 const Inbox = () => {
   const [userInfo, setUserInfo] = useState(null);
   const [currentSlide, setCurrentSlide] = useState(0);
