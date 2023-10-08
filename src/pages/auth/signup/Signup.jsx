@@ -13,11 +13,11 @@ const [loading, setLoading] = useState(false);
     const [errorMessage, setErrorMessage] =useState('')
   
     const handleUsernameChange = (e) => {
-      setUsername(e.target.value);
+      setUsername(e.target.value.trim());
     };
   
     const handlePasswordChange = (e) => {
-      setPassword(e.target.value);
+      setPassword(e.target.value.trim());
     };
   
     // const handleAvatarChange = (e)=>{
