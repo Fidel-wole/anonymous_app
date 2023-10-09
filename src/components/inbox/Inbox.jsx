@@ -6,7 +6,6 @@ import "swiper/css/pagination";
 import Card from "../UI/Card";
 import Button from "../UI/Button";
 import Axios from "axios";
-import Helmet from 'react-helmet';
 import { Circles } from "react-loader-spinner";
 // import required modules
 import { Pagination, A11y } from "swiper/modules";
@@ -99,10 +98,6 @@ const Inbox = () => {
 
   return (
     <>
-
-     <Helmet>
-        <meta name="description" content={`Send ${userInfo.username} a ${slideData[currentSlide]?.title} he/she won't know who sent it`} />
-      </Helmet>
       <div className="container">
         <div className="swipers">
           {loading ? (
