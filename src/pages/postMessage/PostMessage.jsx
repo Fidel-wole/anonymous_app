@@ -40,25 +40,17 @@ setLoading(true);
       if (response.ok) {
 
         setLoading(false);
-        setNotification("Message sent sucessfully, it's time for you to create yours")
-        console.log("Message sent successfully");
-        setTimeout(() => {
-          window.location.href = '/signup';
-        }, 2000);
-
-window.location.href='/signup';
-
-setLoading(false);
-        setNotification("Message sent sucessfully, it's time for you to create yours")
-        console.log("Message sent successfully");
-setMessage('');
-        setTimeout(() => {
-          window.location.href = '/signup';
-        }, 2000);
+        setMessage('');
+        setNotification("Message sent sucessfully, it's time for you to create yours");
+        console.log(notification);
       } else {
         // Handle the case where the request was not successful
         console.error("Failed to send message");
       }
+    }).then(()=>{
+      setTimeout(() => {
+        window.location.href = '/signup';
+      }, 2000);
     })
     .catch((error) => {
       console.error("Error during fetch:", error);

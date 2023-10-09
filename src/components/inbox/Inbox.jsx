@@ -6,12 +6,13 @@ import "swiper/css/pagination";
 import Card from "../UI/Card";
 import Button from "../UI/Button";
 import Axios from "axios";
+import Helmet from 'react-helmet';
 import { Circles } from "react-loader-spinner";
 // import required modules
 import { Pagination, A11y } from "swiper/modules";
 
 const Inbox = () => {
-  const [userInfo, setUserInfo] = useState(null);
+  const [userInfo, setUserInfo] = useState('');
   const [currentSlide, setCurrentSlide] = useState(0);
   const [slideData, setSlidesData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -158,6 +159,7 @@ const Inbox = () => {
            </button>
            {showSuccessMessage && (
         <p className="success-message">Link copied successfully!</p>
+      
       )}
             </div>
           </div>
