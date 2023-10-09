@@ -51,6 +51,7 @@ const Messages = () => {
         'Authorization': 'Bearer ' + token
       },
     } ).then((good)=>{
+      window.location.reload();
       console.log('deleted')
       
     })

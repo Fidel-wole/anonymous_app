@@ -64,6 +64,7 @@ animation: scale linear 1.7s infinite;
 }
 .circle {
 position: absolute;
+bottom: 0.2rem;
     left: 39.5rem;
 }
 .botn{
@@ -75,6 +76,7 @@ position: absolute;
 .botn:hover{
     scale: 1.1;
     transition: .8s;
+    
 }
 
 @media screen and (max-width:750px){
@@ -85,6 +87,6 @@ position: absolute;
         font-size: 19px;
     }
     .circle {
-        left: 7rem;
+        left: 9.5rem;
     }
 }
