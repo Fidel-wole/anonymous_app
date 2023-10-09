@@ -6,6 +6,7 @@ import "swiper/css/pagination";
 import Card from "../UI/Card";
 import Button from "../UI/Button";
 import Axios from "axios";
+import Helmet from 'react-helmet';
 import { Circles } from "react-loader-spinner";
 // import required modules
 import { Pagination, A11y } from "swiper/modules";
