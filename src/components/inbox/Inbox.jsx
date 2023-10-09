@@ -98,6 +98,10 @@ const Inbox = () => {
 
   return (
     <>
+
+     <Helmet>
+        <meta name="description" content={`Send ${userInfo.username} a ${slideData[currentSlide]?.title} he/she won't know who sent it`} />
+      </Helmet>
       <div className="container">
         <div className="swipers">
           {loading ? (
