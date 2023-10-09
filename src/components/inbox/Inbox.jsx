@@ -10,6 +10,7 @@ import Helmet from 'react-helmet';
 import { Circles } from "react-loader-spinner";
 // import required modules
 import { Pagination, A11y } from "swiper/modules";
+
 const Inbox = () => {
   const [userInfo, setUserInfo] = useState('');
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -99,6 +100,9 @@ const Inbox = () => {
   return (
     <>
 
+     <Helmet>
+        <meta name="description" content={`Send ${userInfo.username} a ${slideData[currentSlide]?.title} he/she won't know who sent it`} />
+      </Helmet>
       <div className="container">
         <div className="swipers">
           {loading ? (
