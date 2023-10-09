@@ -78,15 +78,28 @@ bottom: 0.2rem;
     transition: .8s;
     
 }
-
+@media screen and (max-width:888px) {
+    .circle {
+        position: absolute;
+        bottom: 0.2rem;
+            left: 25.5rem;
+        }
+        .botn{
+            position:fixed;
+            bottom:10rem;
+            left:19.5rem;
+            font-size: larger;
+        }
+}
 @media screen and (max-width:750px){
     .botn{
         bottom:2rem;
         backdrop-filter: blur(5px);
-        left:6rem;
+        left:8rem;
         font-size: 19px;
     }
     .circle {
         left: 9.5rem;
     }
 }
+
