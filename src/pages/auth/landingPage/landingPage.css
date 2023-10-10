@@ -1,0 +1,42 @@
+
+
+.image{
+    width: 10%;
+    height: 10%;
+    margin-top: 1rem;
+    padding-top: 5rem;
+margin-left: 37.5rem;
+}
+
+img{
+    height: 100%;
+    width: 100%;
+}
+
+
+.buton{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ margin-top: 22rem;
+ 
+    
+}
+
+.buton button{
+    background: linear-gradient(90deg, violet, #0074E4);
+    padding: 0.6rem;
+    border-radius: 5rem;
+    width:60%;color: white;
+}
+
+@media screen and (max-width:750px){
+    .image{
+        width: 30%;
+        height: 30%;
+        margin-top: 9rem;
+        padding-top: 5rem;
+    margin-left: 9rem;
+       
+    }
+}

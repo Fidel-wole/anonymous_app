@@ -8,7 +8,8 @@ const PostMessage = () => {
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(true);
   const { anonymousId, userId } = useParams();
-  const {notification, setNotification} =useState('');
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+
 
   const handleMessageInput = (e) => {
     setMessage(e.target.value);
@@ -41,7 +42,7 @@ setLoading(true);
 
         setLoading(false);
         setMessage('');
-        setNotification("Message sent sucessfully, it's time for you to create yours");
+        setShowSuccessMessage(true);
         console.log(notification);
       } else {
         // Handle the case where the request was not successful
@@ -103,7 +104,10 @@ setLoading(true);
         <div>
        
           <div className="mesage_container">
-    {notification}
+          {showSuccessMessage && (
+        <p className="success-message">Message sent successfully!</p>
+      
+      )}
             <div className="mesage">
           <p>{anonymousData.description}</p>
               <form onSubmit={handleMessage}>
