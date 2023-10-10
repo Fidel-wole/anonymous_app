@@ -43,7 +43,6 @@ setLoading(true);
         setLoading(false);
         setMessage('');
         setShowSuccessMessage(true);
-        console.log(notification);
       } else {
         // Handle the case where the request was not successful
         console.error("Failed to send message");
@@ -55,7 +54,6 @@ setLoading(true);
     })
     .catch((error) => {
       console.error("Error during fetch:", error);
-  setNotification("Error sending the message. Please try again.");
   setLoading(false);
     });
   };
