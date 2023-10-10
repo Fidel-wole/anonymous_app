@@ -10,7 +10,7 @@ const LandingPage = () => {
     <div className="landingPage">
         <div className="logo">
           <div className="image">
-          <img src="/logo.svg"/>
+          <img src="/logo.svg" alt=''/>
           </div>
 
         </div>
