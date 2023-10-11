@@ -1,5 +1,4 @@
 import React from 'react';
-import LandingPage from './pages/auth/landingPage/LandingPage';
 import Home from './pages/home/Home';
 import Messages from './pages/messages/Messages';
 import Message from './pages/message/Message';
@@ -29,8 +28,7 @@ function AppContent() {
     
       <Routes>
       <Route path="/signup" element={<Signup/>} />
-        <Route path="/login" element={<SignInPage />} />
-        <Route path="/" element={<LandingPage />} />
+        <Route path="/" element={<SignInPage />} />
         <Route
           path="/home"
           element={<ProtectedRoute element={<Home />} />}

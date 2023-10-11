@@ -108,20 +108,13 @@ img{
     }
 }
 
-
-.login-page-1 header{
-    
-text-align: center !important;
-    padding: 0.4rem !important;
-    position: relative !important;
-
+.audio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-bottom: 1rem;
 }
-
-.login-page-1 label input[type="password"]:first-child{
-    display: none;
-}
-form{
-    padding: 0 !important;
-    margin: 0 !important;
-    display: flex !important;
+.audio p{
+    margin-top: 1rem;
 }

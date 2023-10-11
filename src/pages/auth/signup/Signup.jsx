@@ -1,10 +1,6 @@
 import { useState } from 'react';
 import { Circles } from 'react-loader-spinner';
 import React from 'react';
-import LoginPage from '@react-login-page/page1';
-import {Logo} from '@react-login-page/page1';
-import LoginLogo from 'react-login-page/logo-rect'
-import {Input} from '@react-login-page/page1';
 const Signup = () => {
 const [loading, setLoading] = useState(false);
     const [username, setUsername] = useState('');
@@ -80,16 +76,46 @@ setLoading(false)
         </div>
       </div>
     ) : (
-      <form onSubmit={handleSignup}>
-        <LoginPage style={{ height: 650 }}>
-          <Logo>
-            <LoginLogo />
-          </Logo>
-          <Input name="username" type="text" placeholder="username" value={username} onChange={handleUsernameChange} />
-          <Input name="password" type="text" placeholder="password" value={password} visibility={false} onChange={handlePasswordChange} />
+      <div className="limiter">
+      <div className="container-login100">
+        <div className="wrap-login100">
+          <form className="login100-form validate-form" onSubmit={handleSignup}>
           {errorMessage}
-        </LoginPage>
-      </form>
+            <span className="login100-form-logo">
+              <img src='./anon.jpeg' alt ="" />
+            </span>
+  
+            <span className="login100-form-title p-b-34 p-t-27">
+              Sign Up
+            </span>
+  
+            <div className="wrap-input100 validate-input" data-validate = "Enter username">
+              <input className="input100" type="text" name="username" placeholder="Username" onChange={handleUsernameChange} />
+              <span className="focus-input100" data-placeholder="&#xf207;"></span>
+            </div>
+  
+            <div className="wrap-input100 validate-input" data-validate="Enter password">
+              <input className="input100" type="password" name="password" placeholder="Password" onChange={handlePasswordChange}/>
+              <span classNameName="focus-input100" data-placeholder="&#xf191;"></span>
+            </div>
+  
+            <div className="contact100-form-checkbox">
+              <input className="input-checkbox100" id="ckb1" type="checkbox" name="remember-me" />
+              <label className="label-checkbox100" for="ckb1">
+                Remember me
+              </label>
+            </div>
+  
+            <div className="container-login100-form-btn">
+              <button className="login100-form-btn">
+                Sign Up
+              </button>
+            </div>
+  
+          </form>
+        </div>
+      </div>
+    </div>
     );
 }
 
