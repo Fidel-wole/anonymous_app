@@ -111,7 +111,7 @@ setLoading(false)
                 Sign Up
               </button>
             </div>
-            <p>Already have an accont? <a href='/'>Log In</a></p>
+            <p className='anchor'>Already have an accont? <a href='/'>Log In</a></p>
 
           </form>
         </div>

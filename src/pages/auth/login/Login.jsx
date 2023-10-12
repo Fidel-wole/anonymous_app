@@ -107,7 +107,7 @@ const Login = () => {
 							Login
 						</button>
 					</div>
-<p>Don't have an accont? <a href='/signup'>Sign Up</a></p>
+<p className='anchor'> Don't have an accont? <a href='/signup'>Sign Up</a></p>
 				</form>
 			</div>
 		</div>
