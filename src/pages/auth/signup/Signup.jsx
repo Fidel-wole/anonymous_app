@@ -80,7 +80,7 @@ setLoading(false)
       <div className="container-login100">
         <div className="wrap-login100">
           <form className="login100-form validate-form" onSubmit={handleSignup}>
-          {errorMessage}
+         <p>{errorMessage}</p> 
             <span className="login100-form-logo">
               <img src='./anon.jpeg' alt ="" />
             </span>
@@ -111,7 +111,8 @@ setLoading(false)
                 Sign Up
               </button>
             </div>
-  
+            <p>Already have an accont? <a href='/'>Log In</a></p>
+
           </form>
         </div>
       </div>

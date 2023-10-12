@@ -409,6 +409,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-bottom: 1rem;
   }
   
   .login100-form-btn {
@@ -542,14 +543,18 @@
     visibility: visible;
     opacity: 1;
   }
-  
+p, a{
+  color: white;
+}  
   @media (max-width: 992px) {
     .alert-validate::before {
       visibility: visible;
       opacity: 1;
     }
   }
-  
+  a{
+    text-decoration: underline;
+  }
   
   .audio{
     display: flex;
@@ -560,4 +565,6 @@
 }
 .audio p{
     margin-top: 1rem;
+    color: black;
 }
+
