@@ -80,7 +80,7 @@ setLoading(false)
       <div className="container-login100">
         <div className="wrap-login100">
           <form className="login100-form validate-form" onSubmit={handleSignup}>
-         <p>{errorMessage}</p> 
+         <p className='anchor'>{errorMessage}</p> 
             <span className="login100-form-logo">
               <img src='./anon.jpeg' alt ="" />
             </span>

@@ -543,7 +543,7 @@
     visibility: visible;
     opacity: 1;
   }
-  .anchor{
+  .anchor, a{
   color: white;
 }  
   @media (max-width: 992px) {
