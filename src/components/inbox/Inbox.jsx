@@ -19,26 +19,46 @@ const Inbox = () => {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
 
-  const copyLinkToClipboard = () => {
-    const linkToCopy = `https://anonz.netlify.app/message/${slideData[currentSlide]?._id}/${userInfo.userId}`; 
+  const shortenAndCopyLink = async () => {
+    const longURL = `https://anonz.netlify.app/message/${slideData[currentSlide]?._id}/${userInfo.userId}`;
+    const bitlyAccessToken = '4960dd948a3d0ec5c0389b6e62e530ecddd84c95'; // Replace with your Bitly access token
   
-    // Check if the link exists before copying
-    if (linkToCopy) {
-      navigator.clipboard.writeText(linkToCopy).then(() => {
-        // Link copied successfully, show the success message
-        console.log("Link copied to clipboard: " + linkToCopy);
-        setShowSuccessMessage(true);
+    try {
+      // Make a POST request to Bitly's API to shorten the URL
+      const response = await Axios.post(
+        'https://api-ssl.bitly.com/v4/shorten',
+        {
+          long_url: longURL,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${bitlyAccessToken}`,
+            'Content-Type': 'application/json',
+          },
+        }
+      );
   
-        // Hide the success message after a few seconds 
-        setTimeout(() => {
-          setShowSuccessMessage(false);
-        }, 3000); // Hide after 3 seconds (adjust the time as needed)
-      }).catch((error) => {
-        // Handle any errors that may occur during copying
-        console.error("Error copying link: " + error);
-      });
+      const shortenedLink = response.data.link;
+  
+      // Check if the link exists before copying
+      if (shortenedLink) {
+        navigator.clipboard.writeText(shortenedLink).then(() => {
+          // Link copied successfully, show the success message
+          console.log("Link copied to clipboard: " + shortenedLink);
+          setShowSuccessMessage(true);
+  
+          // Hide the success message after a few seconds
+          setTimeout(() => {
+            setShowSuccessMessage(false);
+          }, 3000); // Hide after 3 seconds (adjust the time as needed)
+        });
+      }
+    } catch (error) {
+      // Handle any errors that may occur during URL shortening or copying
+      console.error("Error shortening and copying link: " + error);
     }
   };
+  
 
   
   
@@ -154,8 +174,8 @@ const Inbox = () => {
           <div className="play_link">
             <div>
               <p>{slideData[currentSlide]?.title}</p>
-              <button onClick={copyLinkToClipboard}> 
-              <Button   onClick={copyLinkToClipboard} themecolor={slideData[currentSlide]?.themecolor}></Button>
+              <button onClick={shortenAndCopyLink}> 
+              <Button   onClick={shortenAndCopyLink} themecolor={slideData[currentSlide]?.themecolor}></Button>
            </button>
            {showSuccessMessage && (
         <p className="success-message">Link copied successfully!</p>
