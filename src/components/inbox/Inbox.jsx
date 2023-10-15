@@ -69,26 +69,46 @@ const Inbox = () => {
       Authorization: "Bearer " + token,
     };
 
-    Axios.get("https://anon-backend-qse7.onrender.com/authUser", { headers })
-      .then((response) => {
-        console.log(response.data);
-        setUserInfo(response.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    // Check if user info is already cached
+    const cachedUserInfo = JSON.parse(localStorage.getItem("cachedUserInfo"));
 
-    // Fetch data from the server when the component mounts
-    Axios.get("https://anon-backend-qse7.onrender.com/anonymous", { headers })
-      .then((response) => {
-        console.log(response.data.anonymous);
-        setSlidesData(response.data.anonymous);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error(error);
-        setLoading(false);
-      });
+    if (cachedUserInfo) {
+      setUserInfo(cachedUserInfo);
+    } else {
+      Axios.get("https://anon-backend-qse7.onrender.com/authUser", { headers })
+        .then((response) => {
+          const userData = response.data;
+          setUserInfo(userData);
+
+          // Cache user info
+          localStorage.setItem("cachedUserInfo", JSON.stringify(userData));
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+
+    // Check if slides data is already cached
+    const cachedSlidesData = JSON.parse(localStorage.getItem("cachedSlidesData"));
+
+    if (cachedSlidesData) {
+      setSlidesData(cachedSlidesData);
+      setLoading(false);
+    } else {
+      Axios.get("https://anon-backend-qse7.onrender.com/anonymous", { headers })
+        .then((response) => {
+          const data = response.data.anonymous;
+          setSlidesData(data);
+          setLoading(false);
+
+          // Cache slides data
+          localStorage.setItem("cachedSlidesData", JSON.stringify(data));
+        })
+        .catch((error) => {
+          console.error(error);
+          setLoading(false);
+        });
+    }
   }, []);
 
   const handleSlideChange = (swiper) => {
