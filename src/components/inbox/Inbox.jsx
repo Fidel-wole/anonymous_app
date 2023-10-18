@@ -148,7 +148,7 @@ const Inbox = () => {
   <meta property="og:description" content={`Send ${userInfo.username} a ${slideData[currentSlide]?.title} he/she won't know who sent it`} />
 
   {/* Image */}
-  <meta property="og:image" content={process.env.PUBLIC_URL + '/anon.jpeg}/>
+  <meta property="og:image" content="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUsYvKgXGTrUNed6sIR60Gtxkvrp6H5wBr8Q&usqp=CAU"/>
 
 </Helmet>
 
