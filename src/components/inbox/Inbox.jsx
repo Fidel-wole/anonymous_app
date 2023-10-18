@@ -141,8 +141,17 @@ const Inbox = () => {
     <>
 
      <Helmet>
-        <meta name="description" content={`Send ${userInfo.username} a ${slideData[currentSlide]?.title} he/she won't know who sent it`} />
-      </Helmet>
+  {/* Title */}
+  <title>Send Anonymous Message</title>
+
+  {/* Description */}
+  <meta property="og:description" content={`Send ${userInfo.username} a ${slideData[currentSlide]?.title} he/she won't know who sent it`} />
+
+  {/* Image */}
+  <meta property="og:image" content={process.env.PUBLIC_URL + '/anon.jpeg}/>
+
+</Helmet>
+
       <div className="container">
         <div className="swipers">
           {loading ? (
