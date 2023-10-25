@@ -21,24 +21,24 @@ const Inbox = () => {
 
   const shortenAndCopyLink = async () => {
     const longURL = `https://anonz.netlify.app/message/${slideData[currentSlide]?._id}/${userInfo.userId}`;
-    const bitlyAccessToken = '4960dd948a3d0ec5c0389b6e62e530ecddd84c95'; // Replace with your Bitly access token
+    // const bitlyAccessToken = '4960dd948a3d0ec5c0389b6e62e530ecddd84c95'; // Replace with your Bitly access token
   
-    try {
-      // Make a POST request to Bitly's API to shorten the URL
-      const response = await Axios.post(
-        'https://api-ssl.bitly.com/v4/shorten',
-        {
-          long_url: longURL,
-        },
-        {
-          headers: {
-            Authorization: `Bearer ${bitlyAccessToken}`,
-            'Content-Type': 'application/json',
-          },
-        }
-      );
+    // try {
+    //   // Make a POST request to Bitly's API to shorten the URL
+    //   const response = await Axios.post(
+    //     'https://api-ssl.bitly.com/v4/shorten',
+    //     {
+    //       long_url: longURL,
+    //     },
+    //     {
+    //       headers: {
+    //         Authorization: `Bearer ${bitlyAccessToken}`,
+    //         'Content-Type': 'application/json',
+    //       },
+    //     }
+    //   );
   
-      const shortenedLink = response.data.link;
+      const shortenedLink = longURL;
   
       // Check if the link exists before copying
       if (shortenedLink) {
@@ -53,10 +53,10 @@ const Inbox = () => {
           }, 3000); // Hide after 3 seconds (adjust the time as needed)
         });
       }
-    } catch (error) {
-      // Handle any errors that may occur during URL shortening or copying
-      console.error("Error shortening and copying link: " + error);
-    }
+    // } catch (error) {
+    //   // Handle any errors that may occur during URL shortening or copying
+    //   console.error("Error shortening and copying link: " + error);
+    // }
   };
   
 
